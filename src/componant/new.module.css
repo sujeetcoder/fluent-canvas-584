@@ -20,3 +20,34 @@
     justify-content: space-around;
 }
 
+@media all and (max-width: 640px) {
+    *{
+        box-sizing: border-box;
+    }
+    .firstData{
+        display: block;
+        background-color: red;
+        width: 100%;
+        border: 1px solid green;
+        height: 180px;
+        justify-content: none;
+    }
+
+}
+
+@media all and (min-width: 641px) and (max-width: 1007px) { 
+    *{
+        box-sizing: border-box;
+    }
+    .firstData{
+        display: grid;
+        grid-template-rows: 2;
+        grid-template-columns: 2;
+        background-color: yellow;
+        width: 100%;
+        border: 1px solid green;
+        height: 100px;
+        justify-content: space-around;
+    }
+
+}
