@@ -7,8 +7,8 @@ export default function  Navbar(){
     return (
         <div className="navbar">
             <div className="nav1" >
-            <img className="nav_image" src="https://www.deccanherald.com/sites/deccanherald.com/themes/deccanherald/images/logo/white-logo.svg" alt="h" />
-            <img className="nav_sec" src={nav_sec} alt="h" />
+            <img className="nav_image" src="https://www.deccanherald.com/sites/deccanherald.com/themes/deccanherald/images/logo/white-logo.svg"  />
+            <img className="nav_sec" src={nav_sec}  />
             </div>
             <Link className="hi" to="/" > <p>Home</p>  </Link>
             <p>Bangluru</p>
@@ -23,7 +23,7 @@ export default function  Navbar(){
                 <p>NewsLatters</p>
             </div>
             <div>
-                <img className="search" src={search} alt="search" />
+                <img className="search" src={search}  />
             </div>
 
 
