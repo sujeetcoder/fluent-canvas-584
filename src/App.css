@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+   
+}
+
+
+.navbar{
+    background-color: #0087a8;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 60px;
+    padding: 0px 140px;
+    position: sticky;
+    top: 0px;
+}
+.navbar>p{
+    color: white;
+}
+
+.nav_image{
+    width: 150px;
+}
+
+.nav1{
+    display: flex;
+    justify-content: space-around;
+
+}
+.newslatter{
+    background-color: yellow;
+    padding-left: 8px;
+    width: 100px;
+}
+.newslatter>p{
+    margin: 3px;
+}
+.newslatter>p:first-child{
+    color: red;
+}
+.search{
+    
+    height: 100%;
+}
+.hi{
+    color: white;
+    text-decoration: none;
+}
+
