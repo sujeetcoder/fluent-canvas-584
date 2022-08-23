@@ -1,0 +1,40 @@
+.image1{
+    width: 1510px;
+}
+
+.allData{
+    border: 1px solid red;
+    width: 100%;
+    height: 1800px;
+}
+.News{
+    border: 1px solid green;
+    width: 100%;
+    height: 2500px;
+}
+.firstData{
+    display: flex;
+    width: 100%;
+    border: 1px solid red;
+    height: 50px;
+    justify-content: space-around;
+}
+
+@media all  and (max-width: 899px) {
+    .firstData{
+        display: grid;
+        grid-template-columns: 1;
+        width: 100%;
+        border: 1px solid black;
+        height: 80px;
+        justify-content: space-around;
+    }
+    .image1{
+        width: 50%;
+    }
+    .allData{
+        border: 1px solid red;
+        width: 100%;
+        height: 1800px;
+    }
+}
