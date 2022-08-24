@@ -11,7 +11,7 @@ export default function  Navbar(){
             <img className="nav_sec" src={nav_sec}  />
             </div>
             <Link className="hi" to="/" > <p>Home</p>  </Link>
-            <p>Bangluru</p>
+            <Link className="hi" to="news" > <p>Bangluru</p> </Link>
             <p>Karnatka</p>
             <p>National</p>
             <p>Sport</p>
