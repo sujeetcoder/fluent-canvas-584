@@ -7,10 +7,17 @@ import Home from "./componant/home"
 
 import {  Routes, Route } from "react-router-dom";
 import News from './componant/news';
+import axios from "axios"
 
 function App() {
+ let page = 1
+ let limit = 5
+ let orderBy = "asc"  
 
   function doit(){
+    axios.get(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-products?page=${page}&limit=${limit}&orderBy=${orderBy}`).then((res)=>{
+      console.log(res.data,res.data.data)
+    })
     console.log("hello")
   }
 
