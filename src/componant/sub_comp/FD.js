@@ -15,7 +15,7 @@ export function FdLeft(props){
   
     const {obj} = props
     const redirect = (obj)=>{
-      console.log(obj)
+     
       localStorage.setItem("obj", JSON.stringify(obj))
       navigate("news")
       }
@@ -45,10 +45,10 @@ export function FdMid(props){
   let navigate = useNavigate()
  
  
-  console.log("fd page data")
-  console.log(data[2])
+  
+  
   function redirect(obj){
-    console.log(obj)
+    
     localStorage.setItem("obj", JSON.stringify(obj))
     navigate("news")
 
@@ -81,11 +81,10 @@ export function FdMid(props){
 export function LsMid(props){
   let navigate = useNavigate()
   const {data} = props
-  console.log("lsmid")
-  console.log(data)
+  
 
   function redirect(obj){
-    console.log(obj)
+
     localStorage.setItem("obj", JSON.stringify(obj))
     navigate("news")
   }
@@ -146,7 +145,7 @@ export function SdLeft(props){
   const {data} = props
 
   const redirect = (obj)=>{
-    console.log(obj)
+  
     localStorage.setItem("obj", JSON.stringify(obj))
     navigate("news")
   }
@@ -179,10 +178,9 @@ export function FdMid2(props){
   let navigate = useNavigate()
  
  
-  console.log("fd page data")
-  console.log(data[2])
+  
   function redirect(obj){
-    console.log(obj)
+  
     localStorage.setItem("obj", JSON.stringify(obj))
     window.location.href = "news"
 
