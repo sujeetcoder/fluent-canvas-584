@@ -21,25 +21,31 @@ function App() {
 
 
 
-  const [pending, setPending] = useState(false)
+  const [pending, setPending] = useState(true)
   const [data,setData] = useState([])
   useEffect(()=>{
     console.log("ho gya")
   },[])
 
+  setTimeout(() => {
+    setPending(false)
+  }, 1500);
+
   function ss(){
-    setPending(true)
+   /*  setPending(true) */
+   setTimeout(() => {
     axios.get(`https://masai-api.herokuapp.com/news/top-headlines?country=in`).then((res)=>{
       let article = res.data.articles
         setData(article)
-        setTimeout(() => {
-          setPending(false)
-        }, 3500);
+       
        
         console.log("app page data")
         console.log(data)
         localStorage.setItem("data", JSON.stringify(data))
     }).catch((err)=>{console.log(err)})
+    
+   }, 4000);
+    
   }
 
   

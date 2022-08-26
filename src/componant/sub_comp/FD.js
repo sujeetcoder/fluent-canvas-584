@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 import add from "../../img/add.png"
@@ -100,7 +100,7 @@ export function LsMid(props){
       </div>
     )
   }
-  return <h1>loading...</h1>
+  return <p>loading...</p>
 
 }
 
