@@ -11,7 +11,7 @@
     
     border: 1px solid red;
     width: 78%;
-    height: 1800px;
+    /* height: 1800px; */
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -33,7 +33,7 @@
     color: blue;
 }
 .news_first{
-    border: 1px solid red;
+    
     width: 57%;
     height: 100%;
 }
@@ -66,4 +66,34 @@
     text-decoration: underline;
     
 
+}
+.news_first>p{
+    line-height: 30px;
+}
+.mid_news{
+    width: 100%;
+    
+}
+.sec_news_top{
+    width: 100%;
+    margin-top: 150px;
+}
+.mid_el{
+    width: 100%;
+    
+}
+.mid_el>div{
+    width: 100%;
+  
+    display: flex;
+    justify-content: space-between;
+}
+.mid_el>div>img{
+    width: 31%;
+    height: 80%;
+    margin-top: 5%;
+    
+}
+.mid_el>div>p{
+    width: 65%;
 }

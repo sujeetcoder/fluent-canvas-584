@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 import add from "../../img/add.png"
@@ -116,9 +117,17 @@ export function LsMid(props){
 
 export function FdRight(props){
   const {obj} = props
+  const [load,setLoad] = useState(true)
+  setTimeout(() => {
+    setLoad(false)
+  }, 3500);
   const redirect = (obj)=>{
       console.log(obj)
       
+    }
+
+    if(load){
+      return <p>loading..</p>
     }
 
   return (
@@ -161,3 +170,41 @@ export function SdLeft(props){
 
 }
 
+
+
+
+
+export function FdMid2(props){
+  const  {data} = props
+  let navigate = useNavigate()
+ 
+ 
+  console.log("fd page data")
+  console.log(data[2])
+  function redirect(obj){
+    console.log(obj)
+    localStorage.setItem("obj", JSON.stringify(obj))
+    window.location.href = "news"
+
+  }
+  if(data[0]!=undefined){
+    return (
+      <div className='mid_el'>
+        {data.map((el)=>{
+          return (
+            <div key={el.title} onClick={()=>{redirect(el)}} >
+            <img src={el.urlToImage||altr} className="midimage" />
+            <p>{el.title}</p>
+          </div>
+          )
+        })}
+      
+    </div>
+    )
+  }
+
+  return (
+    
+    <p>loading...</p>
+  )
+}
