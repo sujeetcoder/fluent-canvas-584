@@ -16,7 +16,8 @@ export default function News(){
             <p className='pub' > {obj.publishedAt} </p>
             <div className='news' >
                 <div className='news_first' >
-
+                    <img className='news_img' src={obj.urlToImage} />
+                    <p className='img_desc' > {obj.description} </p>
                 </div>
 
                 <div className='news_sec' ></div>
