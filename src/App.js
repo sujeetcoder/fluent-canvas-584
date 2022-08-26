@@ -10,36 +10,55 @@ import {  Routes, Route } from "react-router-dom";
 import News from './componant/news';
 import axios from "axios"
 import { useState, useEffect } from "react"
+import { LsMid } from './componant/sub_comp/FD';
 
 
 
 
 
 function App() {
+  
+
+
 
   const [pending, setPending] = useState(false)
-  let data = []
+  const [data,setData] = useState([])
+  useEffect(()=>{
+    console.log("ho gya")
+  },[])
 
   function ss(){
     setPending(true)
-    axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=998e4cf3e3e446249d679f38597af973`).then((res)=>{
+    axios.get(`https://masai-api.herokuapp.com/news/top-headlines?country=in`).then((res)=>{
       let article = res.data.articles
-        data = article
-        setPending(false)
+        setData(article)
+        setTimeout(() => {
+          setPending(false)
+        }, 3500);
+       
+        console.log("app page data")
         console.log(data)
         localStorage.setItem("data", JSON.stringify(data))
     }).catch((err)=>{console.log(err)})
   }
+
+  
   
   window.addEventListener("load" , (e)=>{
     ss()
   })
+
+ 
+
+ 
 
 
 
   function doit(){
     ss()
   }
+
+  
 
   if(pending){
     return (

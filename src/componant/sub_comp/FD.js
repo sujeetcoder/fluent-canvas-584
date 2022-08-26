@@ -5,47 +5,94 @@ import add from "../../img/add.png"
 
 
 
-
+let altr = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sm6HxdLaa5pt5RVPXfBKBTEXqX1grDrz-w&usqp=CAU"
 
 export function FdLeft(props){
+  
     const {obj} = props
     const redirect = (obj)=>{
       console.log(obj)
+      localStorage.setItem("obj", JSON.stringify(obj))
+      }
+      if(obj!=undefined){
+        return (
+          <div>
+          <img src={obj.urlToImage||altr}></img> 
+          <h3 onClick={()=>{redirect(obj)}} >Bilkis case: SC notice to Gujarat over convicts release</h3>
+        </div>
+        )
       }
 
     return (
-        <div>
-                <img src="https://www.deccanherald.com/sites/dh/files/styles/fullcardimage/public/articleimages/2022/08/25/bilkis-bano-pti-1139116-1661410777.png?itok=OuGdHjbJ"></img> 
-                <h3 onClick={()=>{redirect(obj)}} >Bilkis case: SC notice to Gujarat over convicts release</h3>
-              </div>
+        
+        <p>loading...</p>
     )
 }
 
+
+
+
+
+
+
 export function FdMid(props){
-  const  {data,data2} = props
+  const  {data} = props
  
  
-  
+  console.log("fd page data")
+  console.log(data[2])
   function redirect(obj){
     console.log(obj)
+    localStorage.setItem("obj", JSON.stringify(obj))
+  }
+  if(data[0]!=undefined){
+    return (
+      <div className='mid_el'>
+        {data.map((el)=>{
+          return (
+            <div key={el.title} onClick={()=>{redirect(el)}} >
+            <img src={el.urlToImage||altr} className="midimage" />
+            <p>{el.title}</p>
+          </div>
+          )
+        })}
+      
+    </div>
+    )
   }
 
   return (
-    <div>
-      <div onClick={()=>{redirect(data)}} >
-        <img src={data.urlToImage} className="midimage" />
-        <p>{data.title}</p>
-      </div>
-      <div onClick={()=>{redirect(data)}} >
-        <img src={data.urlToImage} className="midimage" />
-        <p>{data.title}</p>
-      </div>
-      <div onClick={()=>{redirect(data)}} >
-        <img src={data.urlToImage} className="midimage" />
-        <p>{data.title}</p>
-      </div>
-    </div>
+    
+    <p>loading...</p>
   )
+}
+
+
+
+/* al mid */
+export function LsMid(props){
+  const {data} = props
+  console.log("lsmid")
+  console.log(data)
+
+  function redirect(obj){
+    console.log(obj)
+    localStorage.setItem("obj", JSON.stringify(obj))
+  }
+
+  if(data[0]!=undefined){
+    return (
+      <div className='mid_el'>
+      <ul>
+        {data.map((el)=>{
+          return <li onClick={()=>{redirect(el)}} key={el.title} >{el.title}</li>
+        })}
+      </ul>
+      </div>
+    )
+  }
+  return <h1>loading...</h1>
+
 }
 
 
@@ -62,6 +109,7 @@ export function FdRight(props){
   const {obj} = props
   const redirect = (obj)=>{
       console.log(obj)
+      
     }
 
   return (
@@ -70,5 +118,35 @@ export function FdRight(props){
               
             </div>
   )
+}
+
+
+
+/* sec data */
+export function SdLeft(props){
+  const {data} = props
+
+  const redirect = (obj)=>{
+    console.log(obj)
+    localStorage.setItem("obj", JSON.stringify(obj))
+  }
+
+  if(data[0]!=undefined){
+    return (
+      <div >
+          {data.map((el)=>{
+            return (
+              <div id='sec_div' key={el.title} onClick={()=>{redirect(el)}} >
+              <img src={el.urlToImage||altr} className="midimage" />
+              <p>{el.title}</p>
+            </div>
+            )
+          })}
+      </div>
+    )
+  }
+
+  return <p>loading...</p>
+
 }
 
