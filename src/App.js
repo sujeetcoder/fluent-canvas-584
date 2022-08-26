@@ -13,53 +13,38 @@ import { useState, useEffect } from "react"
 
 
 
-function App() {
-  let data2 = {
-    title: "sujeet",
-    urlToImage: "https://www.deccanherald.com/sites/dh/files/styles/fullcardimage/public/articleimages/2022/08/25/bilkis-bano-pti-1139116-1661410777.png?itok=OuGdHjbJ"
-  }
-  const [pending, setPending] = useState(false)
-  const [data,setData] = useState(data2)
-  const [object,setObject] = useState({})
 
-  useEffect(()=>{
+
+function App() {
+
+  const [pending, setPending] = useState(false)
+  let data = []
+
+  function ss(){
     setPending(true)
     axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=998e4cf3e3e446249d679f38597af973`).then((res)=>{
       let article = res.data.articles
-      
-      setData([...article])
-      
-      setTimeout(() => {
+        data = article
         setPending(false)
-        
-      }, 2500);
-      
-      
+        console.log(data)
+        localStorage.setItem("data", JSON.stringify(data))
     }).catch((err)=>{console.log(err)})
-  },[])
+  }
   
-  
-  
+  window.addEventListener("load" , (e)=>{
+    ss()
+  })
 
 
 
   function doit(){
-    setPending(true)
-    axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=998e4cf3e3e446249d679f38597af973`).then((res)=>{
-      let article = res.data.articles
-      
-      setData([article])
-      
-      setPending(false)
-      console.log(data)
-    })
-    console.log("hello")
+    ss()
   }
 
   if(pending){
     return (
       <div className="App">
-        <h1>Pending...</h1>
+        <h1>loading...</h1>
 
       </div>
   );
@@ -73,7 +58,7 @@ function App() {
       <button onClick={doit} > hello1 </button>
       
          <Routes>
-            <Route path={'/'} element={<Home news1={data} />} />
+            <Route path={'/'} element={<Home data={data} />} />
             <Route path={'/news'} element={<News/>} />
          </Routes>
 

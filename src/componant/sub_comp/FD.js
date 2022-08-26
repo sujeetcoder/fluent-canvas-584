@@ -3,10 +3,14 @@ import '../../App.css';
 import add from "../../img/add.png"
 
 
+
+
+
+
 export function FdLeft(props){
     const {obj} = props
     const redirect = (obj)=>{
-        console.log(obj)
+      console.log(obj)
       }
 
     return (
@@ -18,15 +22,12 @@ export function FdLeft(props){
 }
 
 export function FdMid(props){
-  let {data,data2} = props
-  const [obj3,setObj3] = useState(data2)
-  console.log(obj3)
+  const  {data,data2} = props
+ 
+ 
   
-
   function redirect(obj){
-    /* console.log(obj) */
-    console.log(data2)
-
+    console.log(obj)
   }
 
   return (
@@ -45,8 +46,17 @@ export function FdMid(props){
       </div>
     </div>
   )
-
 }
+
+
+
+
+
+
+
+
+
+
 
 export function FdRight(props){
   const {obj} = props
@@ -61,3 +71,4 @@ export function FdRight(props){
             </div>
   )
 }
+
