@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 import add from "../../img/add.png"
+
 
 
 
@@ -8,11 +10,13 @@ import add from "../../img/add.png"
 let altr = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sm6HxdLaa5pt5RVPXfBKBTEXqX1grDrz-w&usqp=CAU"
 
 export function FdLeft(props){
+  let navigate = useNavigate()
   
     const {obj} = props
     const redirect = (obj)=>{
       console.log(obj)
       localStorage.setItem("obj", JSON.stringify(obj))
+      navigate("news")
       }
       if(obj!=undefined){
         return (
@@ -37,6 +41,7 @@ export function FdLeft(props){
 
 export function FdMid(props){
   const  {data} = props
+  let navigate = useNavigate()
  
  
   console.log("fd page data")
@@ -44,6 +49,8 @@ export function FdMid(props){
   function redirect(obj){
     console.log(obj)
     localStorage.setItem("obj", JSON.stringify(obj))
+    navigate("news")
+
   }
   if(data[0]!=undefined){
     return (
@@ -71,6 +78,7 @@ export function FdMid(props){
 
 /* al mid */
 export function LsMid(props){
+  let navigate = useNavigate()
   const {data} = props
   console.log("lsmid")
   console.log(data)
@@ -78,6 +86,7 @@ export function LsMid(props){
   function redirect(obj){
     console.log(obj)
     localStorage.setItem("obj", JSON.stringify(obj))
+    navigate("news")
   }
 
   if(data[0]!=undefined){
@@ -124,11 +133,13 @@ export function FdRight(props){
 
 /* sec data */
 export function SdLeft(props){
+  let navigate = useNavigate()
   const {data} = props
 
   const redirect = (obj)=>{
     console.log(obj)
     localStorage.setItem("obj", JSON.stringify(obj))
+    navigate("news")
   }
 
   if(data[0]!=undefined){
