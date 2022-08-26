@@ -84,7 +84,7 @@ function App() {
       
          <Routes>
             <Route path={'/'} element={<Home data={data} />} />
-            <Route path={'/news'} element={<News/>} />
+            <Route path={'/news'} element={<News data={data} />} />
          </Routes>
 
          
