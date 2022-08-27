@@ -11,7 +11,7 @@ import { FdMid2 } from './sub_comp/FD';
 
 export default function News(props){
 
-    let newsData2 = {...JSON.parse(localStorage.getItem("obj")) || {} }
+    let newsData2 = JSON.parse(localStorage.getItem("obj")) || {} 
     const [obj,setObj] = useState(newsData2)
 
 
@@ -66,7 +66,7 @@ export default function News(props){
 
                 <div className='news_sec' >
                     <img className='sec_news_top' src={sec_news_top} />
-                    <FdMid2 data={newData} fun={setObj}  />
+                    <FdMid2 data={newData} setObj={setObj} setLoading={setLoading} setMid={setMid} />
                 </div>
             
             </div>
@@ -76,8 +76,8 @@ export default function News(props){
 
 
     return (
-        <div className="News" >
-            <h1>hello</h1>
+        <div className="News3" >
+            <h1>loading</h1>
         </div>
     )
 }

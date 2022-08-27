@@ -174,7 +174,7 @@ export function SdLeft(props){
 
 
 export function FdMid2(props){
-  const  {data ,fun} = props
+  const  {data ,setLoading, setMid, setObj} = props
   let navigate = useNavigate()
  
  
@@ -182,10 +182,24 @@ export function FdMid2(props){
   function redirect(obj){
   
     localStorage.setItem("obj", JSON.stringify(obj))
-   /*  window.location.href = "news" */
-   fun({...obj})
+    window.location.href = "/news"
+   /* setObj(obj) */
+
+   /* setLoading(true)
+    setMid(false)
+
+   setTimeout(() => {
+    setLoading(false)
+    
+   }, 8000);
+   
+   setTimeout(() => {
+    setMid(true)
+   }, 6000); */
 
   }
+
+
   if(data[0]!=undefined){
     return (
       <div className='mid_el'>
