@@ -174,7 +174,7 @@ export function SdLeft(props){
 
 
 export function FdMid2(props){
-  const  {data} = props
+  const  {data ,fun} = props
   let navigate = useNavigate()
  
  
@@ -182,7 +182,8 @@ export function FdMid2(props){
   function redirect(obj){
   
     localStorage.setItem("obj", JSON.stringify(obj))
-    window.location.href = "news"
+   /*  window.location.href = "news" */
+   fun({...obj})
 
   }
   if(data[0]!=undefined){
