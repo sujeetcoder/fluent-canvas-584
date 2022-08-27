@@ -182,7 +182,8 @@ export function FdMid2(props){
   function redirect(obj){
   
     localStorage.setItem("obj", JSON.stringify(obj))
-    window.location.href = "/news"
+   /*  window.location.href = "/news" */
+    window.location.reload()
    /* setObj(obj) */
 
    /* setLoading(true)
