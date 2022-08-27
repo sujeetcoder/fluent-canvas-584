@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    border-radius: 5px;
 }
 
 .tumhiho{
@@ -9,7 +10,7 @@
 }
 .news{
     
-    border: 1px solid red;
+   
     width: 78%;
     /* height: 4000px; */
     margin: auto;
@@ -18,9 +19,9 @@
 }
 .news3{
     
-    border: 1px solid yellow;
+   
     width: 78%;
-    height: 4000px;
+    height: 2000px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -49,7 +50,7 @@
     height: 100%;
 }
 .news_sec{
-    border: 1px solid red;
+   
     width: 33%;
     height: 100%;
 }
