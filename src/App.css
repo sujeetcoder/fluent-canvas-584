@@ -19,6 +19,10 @@
 .navbar>p{
     color: white;
 }
+.navbar>.hi>p:hover{
+    color: yellow;
+    background-color: red;
+}
 
 .nav_image{
     width: 150px;
