@@ -23,7 +23,7 @@ export function FdLeft(props){
         return (
           <div>
           <img src={obj.urlToImage||altr}></img> 
-          <h3 onClick={()=>{redirect(obj)}} >Bilkis case: SC notice to Gujarat over convicts release</h3>
+          <h3 onClick={()=>{redirect(obj)}} >{obj.title}</h3>
         </div>
         )
       }
@@ -174,7 +174,7 @@ export function SdLeft(props){
 
 
 export function FdMid2(props){
-  const  {data ,setLoading, setMid, setObj} = props
+  const  {data ,setLoading, setObj} = props
   let navigate = useNavigate()
  
  

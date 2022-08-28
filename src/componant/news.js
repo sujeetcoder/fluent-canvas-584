@@ -36,6 +36,9 @@ export default function News(props){
         setLoading(false)
     }, 1200);
 
+
+   
+
    
 
     if(loading){
@@ -45,6 +48,7 @@ export default function News(props){
         </div>
         )
     }
+  
 
     if(obj.title!=undefined){
         return (
@@ -73,7 +77,7 @@ export default function News(props){
 
                 <div className='news_sec' >
                     <img className='sec_news_top' src={sec_news_top} />
-                    <FdMid2 data={newData} setObj={setObj} setLoading={setLoading} setMid={setMid} />
+                    <FdMid2 data={newData} setObj={setObj} setLoading={setLoading} />
                 </div>
             
             </div>
@@ -82,9 +86,5 @@ export default function News(props){
     } 
 
 
-    return (
-      
-            <h1>loading</h1>
-        
-    )
+   
 }
