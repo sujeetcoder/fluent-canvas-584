@@ -17,15 +17,19 @@
     display: flex;
     justify-content: space-between;
 }
-.news3{
-    
-   
-    width: 78%;
-    height: 2000px;
+.News3{
+    width: 100%;
+    height: 800px;
     margin: auto;
-    display: flex;
-    justify-content: space-between;
+    margin-top: 820px;
+   
+   
 }
+.News3>h1{
+    margin-top: 130px;
+    text-align: center;
+}
+
 
 
 .news_top{

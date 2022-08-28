@@ -24,6 +24,7 @@ export default function News(props){
     let navigate = useNavigate()
     const [loading,setLoading] = useState(true)
     const [mid,setMid] = useState(false)
+    const [hi,setHi] = useState(false)
     
 
     setTimeout(() => {
@@ -38,7 +39,11 @@ export default function News(props){
    
 
     if(loading){
-        return <h1 className='loading_news' >Loading..</h1>
+        return (
+            <div className="News3" >
+            <h1>loading...</h1>
+        </div>
+        )
     }
 
     if(obj.title!=undefined){
@@ -51,6 +56,7 @@ export default function News(props){
             <p className='pub' > <span className='news_name' onClick={()=>{ window.location.href = obj.url }} > {obj.source.name} </span> {obj.publishedAt} </p>
             <div className='news' >
                 <div className='news_first' >
+                    
                     <img className='news_img' src={obj.urlToImage} />
                     <p className='img_desc' > {obj.description} </p>
                     <p> {obj.title} {obj.description} {obj.content} {obj.description}  </p>
@@ -59,7 +65,8 @@ export default function News(props){
                   { mid &&  <img className='mid_news' src={mid_news}/> }
                     <p>The RBI has said the new rules were to be implemented immediately, but added that "detailed instructions will be issued separately." Still, Uni suspended its card services this week due to the RBI rules, hitting hundreds of thousands of users, while ... Read more at: https://www.deccanherald.com/business/business-news/indias-digital-lending-rules-spark-disruption-firms-plan-pushback-1139559.html</p>
                     <p>Among other universities on the list are Badaganvi Sarkar World Open University Education Society (Karnataka), St John's University (Kerala), Raja Arbaic Univerity (Nagpur), Indian Institute of Alternative Medicine and Institute of Alternative Medici... Read more at: https://www.deccanherald.com/national/ugc-declares-21-universities-as-fake-maximum-in-delhi-followed-by-up-1139564.html</p>
-                  {mid && <img className='mid_news' src={botom_news}/> }
+                  {mid && <img className='mid_news' src={botom_news}/> } 
+                
 
 
                 </div>
@@ -76,8 +83,8 @@ export default function News(props){
 
 
     return (
-        <div className="News3" >
+      
             <h1>loading</h1>
-        </div>
+        
     )
 }
