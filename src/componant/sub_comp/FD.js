@@ -183,20 +183,11 @@ export function FdMid2(props){
   
     localStorage.setItem("obj", JSON.stringify(obj))
    /*  window.location.href = "/news" */
-    window.location.reload()
-   /* setObj(obj) */
-
-   /* setLoading(true)
-    setMid(false)
-
-   setTimeout(() => {
-    setLoading(false)
-    
-   }, 8000);
+   /*  window.location.reload() */
+   setObj(obj)
    
-   setTimeout(() => {
-    setMid(true)
-   }, 6000); */
+   setLoading(true)
+   
 
   }
 
